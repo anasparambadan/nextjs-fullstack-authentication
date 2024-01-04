@@ -17,12 +17,16 @@ const userSchema = new mongoose.Schema({
     },
     isVerified:{
         type:Boolean,
-        default:fasle
+        default:false
     },
     isAdmin:{
         default:false,
         type:Boolean
-    }
+    },
+    forgotPasswordToken:String,
+    forgotPasswordTokenExpiry:Date,
+    verifyToken:String,
+    verifyTokenExpiry:String
 })
 
 const User = mongoose.models.users || mongoose.model("users", userSchema)
